@@ -1,0 +1,18 @@
+int immediateSmaller(int arr[], int n, int x)
+{
+   int ans=0,flag=0;
+   for(int i=0;i<n;i++)
+   {
+       if(arr[i]<x)
+           if(arr[i]>ans)
+           {
+              ans=arr[i];
+              flag=1;
+           }
+   }
+   if(flag==1)
+   return ans;
+   else
+   return -1;
+
+}
