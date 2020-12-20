@@ -1,0 +1,22 @@
+class Solution{   
+private:
+    // do not edit this function
+    // use it to get the value of A[i][j]
+    int get(int i,int j){
+        return a.get(i,j);
+    }
+public:
+    int solve(int R,int C){
+        
+      int answer=0,last=C;
+      for(int i=0;i<R;i++)
+      {
+        while(last>0&&get(i,last-1)==1)
+        {
+          answer=i;
+          last--;
+        }
+      }
+      return answer;
+    }
+};
