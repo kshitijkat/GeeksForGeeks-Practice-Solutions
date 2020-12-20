@@ -1,0 +1,68 @@
+Given a number N, find the smallest number which can be obtained by rearranging the digits of N. The generated number should not have any leading zeroes.
+
+Example 1:
+
+Input: N = 846903
+Output:304689
+
+Example 2:
+
+Input: N = 55010
+Output:10055
+
+Your Task:  
+You don't need to read input or print anything. Your task is to complete the function smallestnum() which takes N (represented by a string) as input parameter and returns a string representing the smallest possible rearrangement.
+ 
+
+Expected Time Complexity: O(log N)
+Expected Auxiliary Space: O(1)
+ 
+
+Constraints:
+1 <= N <= 101000
+
+
+
+class Solution
+{
+public:
+    string smallestnum(string s)
+    {
+        string ans,result;
+        int ar[10],count=0;
+        memset(ar,0,sizeof(ar));
+        
+        int n=s.length();
+        for(int i=0;i<n;i++)
+        {
+            ar[s[i]-'0']++;
+        }
+      /*  for(int i=1;i<=9;i++)
+        {
+            if(ans.length()==1)
+            {
+                while(count--)
+                 ans.push_back('0');
+            }
+            if(ar[i]>0)
+            {
+              while(ar[i]--)
+              ans.push_back(i+'0');
+            }
+        }*/
+        for (int i = 1 ; i <= 9 ; i++) 
+    { 
+        if (ar[i]) 
+        { 
+            result.push_back(i+'0'); 
+            ar[i]--; 
+            break; 
+        } 
+    } 
+    for (int i = 0 ; i <= 9 ; i++) 
+        while (ar[i]--) 
+            result.push_back(i+'0'); 
+  
+    return result; 
+} 
+};
