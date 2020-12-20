@@ -1,0 +1,158 @@
+Given two distinct words start and target, and a set denoting a dictionary of unique words of equal lengths. Find the length of the shortest transformation sequence from start to target.
+Keep the following conditions in mind:
+
+A word can only consist of lowercase characters.
+Only one letter can be changed in each transformation.
+Each transformed word must exist in the dictionary. 
+The starting word may not exist in the dictionary.
+Target will always be in the dictionary otherwise the path is not possible and you should return 0.
+
+Example 1:
+
+Input:
+D={"poon","plee","same","poie","plea","plie","poin"}
+start="toon"
+target="plea"
+Output: 7
+Explanation:
+The length of the smallest transformation sequence
+from toon to plea is 7 i.e. toon -> poon -> poin ->
+poie -> plie -> plee -> plea
+ 
+
+Example 2:
+
+Input:
+D= {"aaa", "aab","abc"} 
+start="aaa"
+target="aab"
+Output: 2
+Explanation:
+The length of the smallest transformation 
+sequence from aaa to aab is 2 i.e. aaa -> aab
+
+Your Task: 
+You do not need to read input or print anything. Complete the function WordLadderLength() which takes the string start, end and a dictionary D of unique words of equal lengths as input parameters and returns the length of the shortest transformation sequence from start to target.
+Return 0 if there is no such transformation sequence.
+
+
+Expected Time Complexity: O(N2M)
+Expected Auxiliary Space: O(N*M)
+
+
+
+
+int WordLadderLength(string bw, string ew, set<string>& dic)
+{
+          int n=dic.size();
+        unordered_map<string,bool> m;
+        for(auto i:dic)
+        {
+            m[i]=true;
+        }
+        queue<string> q;
+        q.push(bw);
+        unordered_map<string,bool> m1;
+        int temp=0;
+        int cnt=0;
+        while(!q.empty())
+        {
+            int na=q.size();
+            temp++;
+            //cout<<na;
+            for(int i=0;i<na;i++)
+            {
+                string s=q.front();
+                q.pop();
+                int size=s.size();
+                m1[s]=true;
+                for(int i=0;i<size;i++)
+                {
+                    if(i==0)
+                    {
+                        string x=s.substr(1,size-1);
+                        for(char j='a';j<='z';j++)
+                        {
+                            string y=j+x;
+                            //cout<<y<<"\n";
+                            if(m[y]==true&&m1[y]==false)
+                            {
+                                if(y==ew)
+                                {
+                                    cnt=temp;
+                                    break;
+                                }
+                               // cout<<y<<" "<<s<<"\n";
+                                m1[y]=true;
+                                q.push(y);
+                            }
+                        }
+                        continue;
+                    }
+                    if(i==n-1)
+                    {
+                        string x=s.substr(0,size-1);
+                        for(char j='a';j<='z';j++)
+                        {
+                            string y=x+j;
+                            if(m[y]==true&&m1[y]==false)
+                            {
+                                if(y==ew)
+                                {
+                                    cnt=temp;
+                                    break;
+                                }
+                                //cout<<y<<" "<<s<<"\n";
+                               // vis[y]=true;
+                                m1[y]=true;
+                                q.push(y);
+                            }
+                        }
+                        continue;
+                    }
+                    string x=s.substr(0,i);
+                    string y=s.substr(i+1,size-i-1);
+                    for(char j='a';j<='z';j++)
+                    {
+                        string z=x+j+y;
+                        if(m[z]==true&&m1[z]==false)
+                        {
+                            if(z==ew)
+                                {
+                                    cnt=temp;
+                                break;
+                                }
+                            //cout<<z<<" "<<s<<"\n";
+                            //vis[z]=true;
+                            m1[z]=true;
+                            q.push(z);
+                        }
+                    }
+                }
+            }
+            if(cnt!=0)
+            {
+                break;
+            }
+        }
+        if(cnt==0)
+        {
+            return cnt;
+        }
+        return cnt+1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
