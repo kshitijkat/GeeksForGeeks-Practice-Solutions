@@ -1,0 +1,143 @@
+Union of two arrays can be defined as the common and distinct elements in the two arrays.
+Given two sorted arrays of size N and M respectively, find their union.
+
+
+Example 1:
+
+Input: 
+N = 5, arr1[] = {1, 2, 3, 4, 5}  
+M = 3, arr2 [] = {1, 2, 3}
+Output: 1 2 3 4 5
+Explanation: Distinct elements including 
+both the arrays are: 1 2 3 4 5.
+ 
+
+Example 2:
+
+Input: 
+N = 5, arr1[] = {2, 2, 3, 4, 5}  
+M = 5, arr2[] = {1, 1, 2, 3, 4}
+Output: 1 2 3 4 5
+Explanation: Distinct elements including 
+both the arrays are: 1 2 3 4 5.
+ 
+
+Example 3:
+
+Input:
+N = 5, arr1[] = {1, 1, 1, 1, 1}
+M = 5, arr2[] = {2, 2, 2, 2, 2}
+Output: 1 2
+Explanation: Distinct elements including 
+both the arrays are: 1 2.
+
+Your Task: 
+You do not need to read input or print anything. Complete the function findUnion() that takes two arrays arr1[], arr2[], and their size N and M as input parameters and returns a list containing the union of the two arrays. 
+ 
+
+Expected Time Complexity: O(N+M).
+Expected Auxiliary Space: O(N+M).
+ 
+
+Constraints:
+1 <= N, M <= 105
+1 <= arr[i], brr[i] <= 106
+
+
+
+
+
+
+
+// { Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+
+ // } Driver Code Ends
+
+
+//arr1,arr2 : the arrays
+// n, m: size of arrays
+vector<int> findUnion(int arr1[], int arr2[], int n, int m)
+{
+   vector<int> ans;
+   int i=0,j=0;
+   while(i<n&&j<m)
+   {
+     if(arr1[i]<arr2[j])
+       {
+           if(i==0)
+               ans.push_back(arr1[i]);
+           else if(arr1[i]!=arr1[i-1])
+              ans.push_back(arr1[i]);
+           i++;
+       }
+     else if(arr1[i]>arr2[j])
+     {
+         if(j==0)
+             ans.push_back(arr2[j]);
+         else if(arr2[j]!=arr2[j-1])
+             ans.push_back(arr2[j]);
+         j++;
+     }
+     else
+     {
+         if(arr1[i]!=arr1[i-1]&&arr2[j]!=arr2[j-1])
+            ans.push_back(arr1[i]);
+            
+            i++;
+            j++;
+     }
+   }
+   
+  while(i<n)
+   {
+    if(arr1[i]!=arr1[i-1])
+     ans.push_back(arr1[i]);
+   i++ ;
+   }
+   
+   while(j<m)
+   {
+      if(arr2[j]!=arr2[j-1])
+   ans.push_back(arr2[j]);
+   j++;
+   }
+
+   return ans;
+}
+
+// { Driver Code Starts.
+
+int main() {
+	
+	int T;
+	cin >> T;
+	
+	while(T--){
+	    
+	    
+	    
+	    int N, M;
+	    cin >>N >> M;
+	    
+	    int arr1[N];
+	    int arr2[M];
+	    
+	    for(int i = 0;i<N;i++){
+	        cin >> arr1[i];
+	    }
+	    
+	    for(int i = 0;i<M;i++){
+	        cin >> arr2[i];
+	    }
+	    
+	    vector<int> ans = findUnion(arr1,arr2, N, M);
+	    for(int i: ans)cout<<i<<' ';
+	    cout << endl;
+	    
+	}
+	
+	return 0;
+}  // } Driver Code Ends
