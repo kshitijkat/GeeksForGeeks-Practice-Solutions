@@ -1,3 +1,3 @@
 # GeeksForGeeks-Practice-Solutions
 
-This will contain the solution of Leetcode problems
+This will contain the solution of GeeksForGeeks-Practice problems
