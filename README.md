@@ -1,6 +1,11 @@
 # GeeksForGeeks-Practice-Solutions
 
-This will contain the solution of some GeeksForGeeks-Practice problems.
+What you may learn here?
+
+This repository contains some useful codes, techniques, algorithms, data structures and problem solutions of GeeksForGeeks-Practice problems.
+
+Language: C++
+
 
 Connect words
 
