@@ -1,10 +1,10 @@
 # GeeksForGeeks-Practice-Solutions
 
-What you may learn here?
+#What you may learn here?
 
 This repository contains some useful codes, techniques, algorithms, data structures and problem solutions of GeeksForGeeks-Practice problems.
 
-Language: C++
+#Language: C++
 
 List of solutions:
 
