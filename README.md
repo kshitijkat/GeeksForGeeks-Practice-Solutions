@@ -4,7 +4,7 @@
 
 This repository contains some useful codes, techniques, algorithms, data structures and problem solutions of GeeksForGeeks-Practice problems.
 
-## Language:
+## Language used:
 C++
 
 ## List of solutions:
