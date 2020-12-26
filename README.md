@@ -1,4 +1,4 @@
-# GeeksForGeeks-Practice-Solutions
+## GeeksForGeeks-Practice-Solutions
 
 # What you may learn here?
 
