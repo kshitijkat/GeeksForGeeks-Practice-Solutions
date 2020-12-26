@@ -10,7 +10,6 @@ C++
 ## List of solutions:
 
 Connect words
-
 Find Immediate Smaller Than X
 
 Minimise the maximum difference
