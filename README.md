@@ -28,3 +28,6 @@ Union of Two Sorted Arrays
 Valid Pair Sum
 
 Wave array
+
+Determinant of a Matrix
+
