@@ -9,30 +9,30 @@ C++
 
 ## List of solutions:
 
-Connect words
+1-Connect words
 
-Find Immediate Smaller Than X
+2-Find Immediate Smaller Than X
 
-Minimise the maximum difference
+3-Minimise the maximum difference
 
-Rearrange an array with O(1) extra space
+4-Rearrange an array with O(1) extra space
 
-Rearrange the Digits
+5-Rearrange the Digits
 
-Smallest Positive missing number
+6-Smallest Positive missing number
 
-Strange matrix
+7-Strange matrix
 
-Union of Two Sorted Arrays
+8-Union of Two Sorted Arrays
 
-Valid Pair Sum
+9-Valid Pair Sum
 
-Wave array
+10-Wave array
 
-Determinant of a Matrix
+11-Determinant of a Matrix
 
-Search in a row-column sorted Matrix
+12-Search in a row-column sorted Matrix
 
-Spirally traversing a matrix
+13-Spirally traversing a matrix
 
 
