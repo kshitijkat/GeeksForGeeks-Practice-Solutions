@@ -1,0 +1,54 @@
+Link-https://practice.geeksforgeeks.org/problems/validate-an-ip-address-1587115621/1/?track=dsa-workshop-1-strings&batchId=308
+
+
+
+bool isvalid(string curr)
+{
+     if(curr.size()>3)
+    return false;
+    
+    if(curr[0]=='0'&&curr.size()>1)
+     return false;
+     
+    int n=stoi(curr);
+    
+    if(n<0||n>255)
+     return false;
+     
+     return true;
+}
+int isValid(string s) {
+   int n=s.size();
+   
+  string curr="";
+  int count=0;
+   
+   for(int i=0;i<n;i++)
+   {
+       if(s[i]=='.')
+       {
+           count++;
+          if(curr.size()==0)
+            return 0;
+          if(!isvalid(curr))
+            return 0;
+          curr="";     
+       }
+       
+       if(isdigit(s[i]))
+       {
+           curr+=s[i];
+           
+            if(curr.size()>3)
+              return 0;
+       }
+   }
+   if(curr.size()==0)
+      return 0;
+   if(!isvalid(curr))
+       return 0;
+   if(count!=3)
+     return 0;
+    
+   return 1;
+}
