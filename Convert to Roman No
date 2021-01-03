@@ -1,0 +1,42 @@
+Link-https://practice.geeksforgeeks.org/problems/convert-to-roman-no/0/?track=dsa-workshop-1-strings&batchId=308
+
+
+
+string convertToRoman(int n) 
+{
+   vector<pair<int,string> > roman;
+   
+   roman.push_back(make_pair(1,"I"));
+   roman.push_back(make_pair(4,"IV"));
+   roman.push_back(make_pair(5,"V"));
+   roman.push_back(make_pair(9,"IX"));
+   roman.push_back(make_pair(10,"X"));
+   roman.push_back(make_pair(40,"XL"));
+   roman.push_back(make_pair(50,"L"));
+   roman.push_back(make_pair(90,"XC"));
+   roman.push_back(make_pair(100,"C"));
+   roman.push_back(make_pair(400,"CD"));
+   roman.push_back(make_pair(500,"D"));
+   roman.push_back(make_pair(900,"CM"));
+   roman.push_back(make_pair(1000,"M"));
+   
+   
+   string s="";
+   int i=12,rem,quo;
+   
+   while(n>0&&i>=0)
+   {
+       if(n/roman[i].first)
+       {
+           rem=n%roman[i].first;
+           quo=n/roman[i].first;
+           
+           while(quo--)
+           s=s+roman[i].second;
+           
+           n=rem;
+       }
+       i--;
+   }
+   return s;
+}
