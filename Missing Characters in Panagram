@@ -1,0 +1,35 @@
+Link-https://practice.geeksforgeeks.org/problems/missing-characters-in-panagram/0/?track=dsa-workshop-1-strings&batchId=308
+
+
+
+
+string missingPanagram(string str){
+
+   bool arr[26];
+   memset(arr,0,26);
+  string ans="";
+   
+   
+   int n=str.size();
+   
+   for(int i=0;i<n;i++)
+   {
+      int a=str[i]-'a';
+      int b=str[i]-'A';
+      
+      if(a>0&&a<26)
+      arr[str[i]-'a']=true;
+      
+      else
+      arr[str[i]-'A']=true;
+   }
+   
+   for(int i=0;i<26;i++)
+   {
+     if(arr[i]==false)
+     {
+         ans.push_back(i+'a');
+     }
+   }
+    return ans;
+}
