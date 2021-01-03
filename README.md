@@ -35,10 +35,10 @@ C++
 
 13-Spirally traversing a matrix
 
-Convert to Roman No
+14-Convert to Roman No
 
-Implement strstr 
+15-Implement strstr 
 
-Missing Characters in Panagram
+16-Missing Characters in Panagram
 
 
