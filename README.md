@@ -41,6 +41,10 @@ C++
 
 16-Missing Characters in Panagram
 
-Anagram      Check if strings are rotations of each other or not          Validate an IP Address
+Anagram 
+
+Check if strings are rotations of each other or not
+
+Validate an IP Address
 
 
