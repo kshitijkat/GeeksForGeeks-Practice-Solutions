@@ -1,0 +1,54 @@
+Given two strings A and B, find the minimum number of times A has to be stated such that B becomes a substring of the repeated A. If no such solution exists, return -1.
+
+Input:
+First line of input contains number of testcases T. For each testcase, there will be two lines containing A and B respectively. 
+
+Output:
+Print the minimum number of times A needs to be repeated. If no solution exists, return -1.
+
+Your Task:
+Complete the function repeatedStringMatch() that takes strings A and B as input and returns integer output.
+
+Constraints: 
+1 <= T <= 100
+1<= A.length() <= 1000
+1<= B.length() <= 1000
+
+Example:
+Sample Input :
+2
+abcd
+cdabcdab
+aa
+a
+
+Sample Output :
+3
+1
+
+Explanation : 
+Testcase 1: After repeating A 3 times, we get ‘abcdabcdabcd’. B is now a substring of A.
+
+Testcase 2: B is already a substring of A and need to be stated only once. 
+
+
+
+
+
+
+int repeatedStringMatch(string a, string b)
+{
+   string p=a;
+        int i=1;
+        while(i<=(b.length()/a.length())+2)   
+        {
+            if(p.find(b)!=-1)
+            {
+                break;
+            }
+            else 
+                p+=a;
+            i++;    
+        }
+        return (p.find(b)!=-1)?i:-1;
+}
