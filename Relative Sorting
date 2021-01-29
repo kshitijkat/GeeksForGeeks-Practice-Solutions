@@ -1,0 +1,32 @@
+Link-https://practice.geeksforgeeks.org/problems/relative-sorting4323/0/?track=dsa-workshop-1-hashing&batchId=308
+
+
+
+void sortA1ByA2(int arr1[], int n, int arr2[], int m) 
+{
+     map<int,int> mp;
+   //  if(m == 0) return arr1;
+     //   if(n == 0) return {};
+        vector<int> res;       
+        for(int i = 0; i<n; i++){
+            mp[arr1[i]]++;
+        }
+      for(int i = 0; i<m; i++){
+       while(mp[arr2[i]]--){
+           res.push_back(arr2[i]);
+       }  
+  mp.erase(arr2[i]);      
+    }
+     for(auto x : mp){
+         if(x.second>=1){
+             while(x.second--!=0){
+                 res.push_back(x.first);
+             }
+         }
+     }    
+    for(int i=0;i<n;i++)
+     arr1[i]=res[i];
+    //cout<<endl;
+   // res.clear();
+    
+} 
